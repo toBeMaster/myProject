@@ -6,55 +6,55 @@ import java.net.URL;
 /**
  * 
  * 
- * ¹¦ÄÜ£º³£Á¿¶¨Òå
+ * åŠŸèƒ½ï¼šå¸¸é‡å®šä¹‰
  * 
  */
 public final class PathConstant {
 
 	/**
-	 * ¹¤³ÌÄ¿Â¼
+	 * å·¥ç¨‹ç›®å½•
 	 */
 	public final static String PROJECT_DIR = PathConstant.getProjectDir();
 	/**
-	 * Â·¾¶Ä¿Â¼
+	 * è·¯å¾„ç›®å½•
 	 */
 	public final static String PATH_DIR = PROJECT_DIR + "path/";
 	/**
-	 * Â·¾¶ID
+	 * è·¯å¾„ID
 	 */
 	public final static String PATH_ID = "pathid";
 	/**
-	 * ¹Ø¼ü×Ö
+	 * å…³é”®å­—
 	 */
 	public final static String KEYWORD = "keyword";
 	/**
-	 * DWR ¿ªÊ¼¼ÇÂ¼Êı
+	 * DWR å¼€å§‹è®°å½•æ•°
 	 */
 	public static final String DWR_START = "start";
 	/**
-	 * DWR Ã¿Ò³¼ÇÂ¼Êı
+	 * DWR æ¯é¡µè®°å½•æ•°
 	 */
 	public static final String DWR_LIMIT = "limit";
 	/**
-	 * ÓÃ»§ÉÏ´«ÎÄ¼ş´æ·Å-Ä¿Â¼
+	 * ç”¨æˆ·ä¸Šä¼ æ–‡ä»¶å­˜æ”¾-ç›®å½•
 	 */
 	public final static String XLS_PATH = PATH_DIR + "uploadFile/";
 	/**
-	 * TOMCAT ÏÂ¼¶±£´æ±í¸ñÂ·¾¶
+	 * TOMCAT ä¸‹çº§ä¿å­˜è¡¨æ ¼è·¯å¾„
 	 */
 	public final static String TOMCAT_XLS_PATH = "path/uploadFile/";
 	/**
-	 * Êı¾İ±¸·İ-Ä¿Â¼
+	 * æ•°æ®å¤‡ä»½-ç›®å½•
 	 */
 	public final static String DATABACKUP_DIR = PROJECT_DIR + "dataBackup/";
 	/**
-	 * Êı¾İ»¹Ô­ÎÄ¼şÉÏ´«ÁÙÊ±Ä¿Â¼
+	 * æ•°æ®è¿˜åŸæ–‡ä»¶ä¸Šä¼ ä¸´æ—¶ç›®å½•
 	 */
 	public static final String DATA_RESTORE_TMP_PATH = PROJECT_DIR
 			+ "dataRestoreTmp/";
 
 	/**
-	 * ÊÇ·ñÎªWinÏµÍ³
+	 * æ˜¯å¦ä¸ºWinç³»ç»Ÿ
 	 * 
 	 * @return boolean
 	 */
@@ -67,9 +67,9 @@ public final class PathConstant {
 	}
 
 	/**
-	 * ¹¦ÄÜ£ºµÃµ½¹¤³ÌÄ¿Â¼
+	 * åŠŸèƒ½ï¼šå¾—åˆ°å·¥ç¨‹ç›®å½•
 	 * 
-	 * @return String ¹¤³ÌÄ¿Â¼
+	 * @return String å·¥ç¨‹ç›®å½•
 	 */
 	public static String getProjectDir() {
 		String filePath = PathConstant.class.getProtectionDomain()
@@ -83,7 +83,7 @@ public final class PathConstant {
 	}
 
 	/**
-	 * ÅĞ¶Ïwebapps ÏÂÓĞÎŞ¸ÃÄ¿Â¼
+	 * åˆ¤æ–­webapps ä¸‹æœ‰æ— è¯¥ç›®å½•
 	 * 
 	 * @param directory
 	 * @return boolean
@@ -111,20 +111,20 @@ public final class PathConstant {
 
 		return isDirectory;
 	}
-	//»ñÈ¡¾ø¶ÔÂ·¾¶
+	//è·å–ç»å¯¹è·¯å¾„
 	public static String getRootPath() {
 		 
 		ClassLoader  cl = PathConstant.class.getClassLoader();
 		URL url = cl.getResource("/");
 		String classPath = url.getPath();
 		String rootPath = "";
-		// windowsÏÂ
+		// windowsä¸‹
 		if ("\\".equals(File.separator)) {
 			rootPath = classPath.substring(1,
 					classPath.indexOf("/WEB-INF/classes"));
 			rootPath = rootPath.replace("/", "\\");
 		}
-		// linuxÏÂ
+		// linuxä¸‹
 		if ("/".equals(File.separator)) {
 			rootPath = classPath.substring(0,
 					classPath.indexOf("/WEB-INF/classes"));

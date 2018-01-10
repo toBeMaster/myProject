@@ -15,7 +15,7 @@ import ee.model.ResultMsgModel;
 
 public class DataWrapper {
 	/**
-	 * ×ª»»³Éjson¸ñÊ½
+	 * è½¬æ¢æˆjsonæ ¼å¼
 	 * 
 	 * @param obj
 	 */
@@ -35,15 +35,15 @@ public class DataWrapper {
 	@Test
 	public void testJsonDate() {
 		ResultMsgModel msg = new ResultMsgModel();
-		msg.setMsg("hello,ÄãºÃ");
+		msg.setMsg("hello,ä½ å¥½");
 		msg.setSuccess(true);
 		msg.setObj(new Date());
-		// Êä³öºÁÃëÖµ
+		// è¾“å‡ºæ¯«ç§’å€¼
 		System.out.println(JSON.toJSONString(msg));
-		// Ä¬ÈÏ¸ñÊ½Îªyyyy-MM-dd HH:mm:ss
+		// é»˜è®¤æ ¼å¼ä¸ºyyyy-MM-dd HH:mm:ss
 		System.out.println(JSON.toJSONString(msg,
 				SerializerFeature.WriteDateUseDateFormat));
-		// ¸ù¾İ×Ô¶¨Òå¸ñÊ½Êä³öÈÕÆÚ
+		// æ ¹æ®è‡ªå®šä¹‰æ ¼å¼è¾“å‡ºæ—¥æœŸ
 		System.out.println(JSON.toJSONStringWithDateFormat(msg, "yyyy-MM-dd",
 				SerializerFeature.WriteDateUseDateFormat));
 	}

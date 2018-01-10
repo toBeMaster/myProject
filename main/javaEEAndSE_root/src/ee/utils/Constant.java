@@ -12,15 +12,15 @@ import java.net.URL;
 public class Constant {
 
 	/**
-	 * ¹¤³ÌÄ¿Â¼
+	 * å·¥ç¨‹ç›®å½•
 	 */
 	public final static String PROJECT_DIR = Constant.getProjectDir();
 	
 	
 	/**
-	 * ¹¦ÄÜ£ºµÃµ½¹¤³ÌÄ¿Â¼
+	 * åŠŸèƒ½ï¼šå¾—åˆ°å·¥ç¨‹ç›®å½•
 	 * 
-	 * @return String ¹¤³ÌÄ¿Â¼
+	 * @return String å·¥ç¨‹ç›®å½•
 	 */
 	public static String getProjectDir() {
 		String filePath = Constant.class.getProtectionDomain().getCodeSource()
@@ -34,7 +34,7 @@ public class Constant {
 	}
 
 	/**
-	 * ÊÇ·ñÎªWinÏµÍ³
+	 * æ˜¯å¦ä¸ºWinç³»ç»Ÿ
 	 * 
 	 * @return boolean
 	 */
@@ -47,7 +47,7 @@ public class Constant {
 	}
 
 	/**
-	 * »ñÈ¡µ½µ±Ç°ÏîÄ¿¸ùlib
+	 * è·å–åˆ°å½“å‰é¡¹ç›®æ ¹lib
 	 * 
 	 * @return String
 	 */
@@ -59,7 +59,7 @@ public class Constant {
 	}
 
 	/**
-	 * »ñÈ¡µ½µ±Ç°ÏîÄ¿¸ùÄ¿Â¼
+	 * è·å–åˆ°å½“å‰é¡¹ç›®æ ¹ç›®å½•
 	 */
 	public static String getPicturePath() {
 		 ClassLoader classLoader = Thread.currentThread()  
