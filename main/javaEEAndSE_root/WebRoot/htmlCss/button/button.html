@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>button</title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.wrap{
+			width: 80px;
+			height: 80px;
+			background: url('circle.png') no-repeat center;
+			background-size: 100% 100%;
+			position: relative;
+		}
+		.top,.right,.bottom,.left{
+			width: 16px;
+			height: 16px;
+			position: absolute;
+			cursor: pointer;
+		}
+		.top{
+			top: 5px;
+			left: 50%;
+			margin-left: -8px;
+			background: url('upBlack.png') no-repeat center;
+			background-size: 100% 100%;
+		}
+		.top:hover{
+			background: url('upBlue.png') no-repeat center;
+		}
+		.right{
+			right: 5px;
+			top: 50%;
+			margin-top: -8px;
+			background: url('rightBlack.png') no-repeat center;
+			background-size: 100% 100%;
+		}
+		.right:hover{
+			background: url('rightBlue.png') no-repeat center;
+		}
+		.bottom{
+			bottom: 5px;
+			left: 50%;
+			margin-left: -8px;
+			background: url('downBlack.png') no-repeat center;
+			background-size: 100% 100%;
+		}
+		.bottom:hover{
+			background: url('downBlue.png') no-repeat center;
+		}
+		.left{
+			left: 5px;
+			top: 50%;
+			margin-top: -8px;
+			background: url('leftBlack.png') no-repeat center;
+			background-size: 100% 100%;
+		}
+		.left:hover{
+			background: url('leftBlue.png') no-repeat center;
+		}
+		.middle{
+			width: 32px;
+			height: 32px;
+			border-radius: 50%;
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			margin-left: -16px;
+			margin-top: -16px;
+		}
+		.add,.dec{
+			width: 14px;
+			height: 14px;
+			margin-left: 10px;
+			line-height: 16px;
+			cursor: pointer;
+		}
+		.add{
+			margin-top: 3px;
+			background: url('zoomBigBlack.png') no-repeat center;
+			background-size: 100% 100%;
+		}
+		.dec{
+			background: url('zoomSmallBlack.png') no-repeat center;
+			background-size: 100% 100%;
+		}
+		.add:hover{
+			background: url('zoomBigBlue.png') no-repeat center;
+		}
+		.dec:hover{
+			background: url('zoomSmallBlue.png') no-repeat center;
+		}
+	</style>
+</head>
+<body>
+	<div class="wrap">
+		<div class="top" id="top"></div>
+		<div class="right" id="right"></div>
+		<div class="bottom" id="bottom"></div>
+		<div class="left" id="left"></div>
+		<div class="middle">
+			<div class="add" id="add"></div>
+			<div class="dec" id="dec"></div>
+		</div>
+	</div>
+</body>
+</html>
