@@ -1,0 +1,1 @@
+create tablespace sshe datafile 'D:\java\db\tablespace\sshe.dbf' size 10m autoextend on;
