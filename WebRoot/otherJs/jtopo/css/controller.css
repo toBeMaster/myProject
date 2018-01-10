@@ -1,0 +1,107 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+.pageController {
+	top:100;
+	left:40px;
+	width: 80px;
+	height: 80px;
+	background: url('../img/tool/circle.png') no-repeat center;
+	background-size: 100% 100%;
+	position: fixed;
+}
+
+.pageController .top,.pageController .right,.pageController .bottom,.pageController .left {
+	width: 16px;
+	height: 16px;
+	position: absolute;
+	cursor: pointer;
+}
+
+.pageController .top {
+	top: 5px;
+	left: 50%;
+	margin-left: -8px;
+	background: url('../img/tool/upBlack.png') no-repeat center;
+	background-size: 100% 100%;
+}
+
+.pageController .top:hover {
+	background: url('../img/tool/upBlue.png') no-repeat center;
+}
+
+.pageController .right {
+	right: 5px;
+	top: 50%;
+	margin-top: -8px;
+	background: url('../img/tool/rightBlack.png') no-repeat center;
+	background-size: 100% 100%;
+}
+
+.pageController .right:hover {
+	background: url('../img/tool/rightBlue.png') no-repeat center;
+}
+
+.pageController .bottom {
+	bottom: 5px;
+	left: 50%;
+	margin-left: -8px;
+	background: url('../img/tool/downBlack.png') no-repeat center;
+	background-size: 100% 100%;
+}
+
+.pageController .bottom:hover {
+	background: url('../img/tool/downBlue.png') no-repeat center;
+}
+
+.pageController .left {
+	left: 5px;
+	top: 50%;
+	margin-top: -8px;
+	background: url('../img/tool/leftBlack.png') no-repeat center;
+	background-size: 100% 100%;
+}
+
+.pageController .left:hover {
+	background: url('../img/tool/leftBlue.png') no-repeat center;
+}
+
+.pageController .middle {
+	width: 32px;
+	height: 32px;
+	border-radius: 50%;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin-left: -16px;
+	margin-top: -16px;
+}
+
+.pageController .add,.pageController .dec {
+	width: 14px;
+	height: 14px;
+	margin-left: 10px;
+	line-height: 16px;
+	cursor: pointer;
+}
+
+.pageController .add {
+	margin-top: 3px;
+	background: url('../img/tool/zoomBigBlack.png') no-repeat center;
+	background-size: 100% 100%;
+}
+
+.pageController .dec {
+	background: url('../img/tool/zoomSmallBlack.png') no-repeat center;
+	background-size: 100% 100%;
+}
+
+.pageController .add:hover {
+	background: url('../img/tool/zoomBigBlue.png') no-repeat center;
+}
+
+.pageController .dec:hover {
+	background: url('../img/tool/zoomSmallBlue.png') no-repeat center;
+}

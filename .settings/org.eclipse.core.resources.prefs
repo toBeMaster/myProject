@@ -1,0 +1,13 @@
+eclipse.preferences.version=1
+encoding//WebRoot/index.jsp=UTF-8
+encoding//src/DB/DBUtil.java=UTF-16
+encoding//src/log4j.properties=UTF-8
+encoding//src/se/access/MatchersDemo.java=UTF-8
+encoding//src/se/util/base/ClobUtil.java=UTF-8
+encoding//src/se/util/base/Encrypt.java=UTF-8
+encoding//src/se/util/base/ExceptionUtil.java=UTF-8
+encoding//src/se/util/base/FileUtil.java=UTF-8
+encoding//src/se/util/base/IpUtil.java=UTF-8
+encoding//src/se/util/base/RequestUtil.java=UTF-8
+encoding//src/se/util/base/ResourceUtil.java=UTF-8
+encoding/<project>=UTF-8

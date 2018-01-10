@@ -1,0 +1,245 @@
+﻿{
+	"arcs" : [{
+		"faultDesc" : "",
+		"faultFlag" : 0,
+		"id" : "2ee39f3f-9d41-49ca-a4db-70a954ec4fa7",
+		"name" : "192.168.0.236-14/192.168.0.166-14",
+		"target" : {
+			"status" : 2
+		},
+		"text" : "上联设备:mj[192.168.0.236]\n下联设备:WIN-20151111COQ[192.168.0.166]\n上联端口:Ethernet1/0/3\n下联端口:Broadcom 802.11n 网络适配器\n\n"
+	}, {
+		"faultDesc" : "",
+		"faultFlag" : 2,
+		"id" : "30ff1a73-c626-4b92-bee2-da35e6effe9e",
+		"name" : "192.168.0.236-4227810/192.168.0.100-11",
+		"target" : {
+			"status" : 2
+		},
+		"text" : "上联设备:mj[192.168.0.236]\n下联设备:WIN-20151111COQ[192.168.0.100]\n上联端口:Ethernet1/0/24\n下联端口:Marvell Yukon 88E8040 Family PCI-E Fast Ethernet Controller\n\n"
+	}, {
+		"faultDesc" : "",
+		"faultFlag" : 2,
+		"id" : "3163bc3e-cd11-42e9-b02d-dd312f32d027",
+		"name" : "192.168.0.236-4227642/192.168.0.114-2",
+		"target" : {
+			"status" : 2
+		},
+		"text" : "上联设备:mj[192.168.0.236]\n下联设备:bogon[192.168.0.114]\n上联端口:Ethernet1/0/3\n下联端口:eth0\n\n"
+	}, {
+		"faultDesc" : "",
+		"faultFlag" : 2,
+		"id" : "32d56f19-8bde-49ae-a4ff-e6153c543bea",
+		"name" : "192.168.0.236-4227810/192.168.0.108-12",
+		"target" : {
+			"status" : 2
+		},
+		"text" : "上联设备:mj[192.168.0.236]\n下联设备:arec-PC[192.168.0.108]\n上联端口:Ethernet1/0/24\n下联端口:Intel(R) Centrino(R) Wireless-N 105\n\n"
+	}, {
+		"faultDesc" : "",
+		"faultFlag" : 2,
+		"id" : "71e1c823-c578-43e3-b7f4-882cc8fbb93c",
+		"name" : "192.168.0.236-4227642/192.168.0.246-11",
+		"target" : {
+			"status" : 2
+		},
+		"text" : "上联设备:mj[192.168.0.236]\n下联设备:WIN-7FA46RJA6KD[192.168.0.246]\n上联端口:Ethernet1/0/3\n下联端口:Intel(R) PRO/1000 MT Network Connection\n\n"
+	}, {
+		"faultDesc" : "",
+		"faultFlag" : 2,
+		"id" : "83900713-8e3f-4961-ae3d-1045803833cd",
+		"name" : "192.168.0.236-4227642/192.168.0.114-2",
+		"target" : {
+			"status" : 2
+		},
+		"text" : "上联设备:mj[192.168.0.236]\n下联设备:bogon[192.168.0.114]\n上联端口:Ethernet1/0/3\n下联端口:eth0\n\n"
+	}, {
+		"faultDesc" : "",
+		"faultFlag" : 2,
+		"id" : "97d88e0c-e941-4eca-9c09-de97224cf7cc",
+		"name" : "192.168.0.236-4227642/192.168.0.223-11",
+		"target" : {
+			"status" : 2
+		},
+		"text" : "上联设备:mj[192.168.0.236]\n下联设备:WIN-PUOFPUNH7FL[192.168.0.223]\n上联端口:Ethernet1/0/3\n下联端口:Broadcom BCM5709C NetXtreme II GigE (NDIS VBD 客户端)\n\n"
+	}, {
+		"faultDesc" : "",
+		"faultFlag" : 2,
+		"id" : "a124e5ab-40d1-4755-9a61-7f65610569d8",
+		"name" : "192.168.0.236-4227730/192.168.0.112-12",
+		"target" : {
+			"status" : 2
+		},
+		"text" : "上联设备:mj[192.168.0.236]\n下联设备:mj-PCa[192.168.0.112]\n上联端口:Ethernet1/0/14\n下联端口:Realtek PCIe FE Family Controller\n\n"
+	}, {
+		"faultDesc" : "",
+		"faultFlag" : 2,
+		"id" : "a90d55b1-36f0-4417-a97d-21d0fc953426",
+		"name" : "192.168.0.236-14/192.168.0.166-14",
+		"target" : {
+			"status" : 2
+		},
+		"text" : "上联设备:mj[192.168.0.236]\n下联设备:WIN-20151111COQ[192.168.0.166]\n上联端口:Ethernet1/0/3\n下联端口:Broadcom 802.11n 网络适配器\n\n"
+	}, {
+		"faultDesc" : "",
+		"faultFlag" : 2,
+		"id" : "bc362076-4046-4160-a310-b612ba47e12c",
+		"name" : "192.168.0.236-4227810/192.168.0.108-12",
+		"target" : {
+			"status" : 2
+		},
+		"text" : "上联设备:mj[192.168.0.236]\n下联设备:arec-PC[192.168.0.108]\n上联端口:Ethernet1/0/24\n下联端口:Intel(R) Centrino(R) Wireless-N 105\n\n"
+	}, {
+		"faultDesc" : "",
+		"faultFlag" : 2,
+		"id" : "bfab5b78-cb68-4325-81da-ace09973c4b0",
+		"name" : "链路A",
+		"target" : {
+			"status" : 2
+		},
+		"text" : "上联设备:mj[192.168.0.236]\n下联设备:WIN-7FA46RJA6KD[192.168.0.246]\n上联端口:Ethernet1/0/3\n下联端口:Intel(R) PRO/1000 MT Network Connection\n\n"
+	}, {
+		"faultDesc" : "",
+		"faultFlag" : 2,
+		"id" : "c1954ac5-f65e-412c-875b-5926c0946b35",
+		"name" : "192.168.0.236-4227722/192.168.0.222-14",
+		"target" : {
+			"status" : 2
+		},
+		"text" : "上联设备:mj[192.168.0.236]\n下联设备:USER-5QARA5M4O3[192.168.0.222]\n上联端口:Ethernet1/0/13\n下联端口:Intel(R) PRO/1000 PM Network Connection\n\n"
+	}, {
+		"faultDesc" : "",
+		"faultFlag" : 2,
+		"id" : "d378ce4b-19d1-41ff-bef3-6624709b8a6e",
+		"name" : "192.168.0.236-4227810/192.168.0.100-11",
+		"target" : {
+			"status" : 2
+		},
+		"text" : "上联设备:mj[192.168.0.236]\n下联设备:WIN-20151111COQ[192.168.0.100]\n上联端口:Ethernet1/0/24\n下联端口:Marvell Yukon 88E8040 Family PCI-E Fast Ethernet Controller\n\n"
+	}, {
+		"faultDesc" : "",
+		"faultFlag" : 2,
+		"id" : "e1f96c3f-2407-4dce-a791-226fdd5ba952",
+		"name" : "192.168.0.236-4227722/192.168.0.222-14",
+		"target" : {
+			"status" : 2
+		},
+		"text" : "上联设备:mj[192.168.0.236]\n下联设备:USER-5QARA5M4O3[192.168.0.222]\n上联端口:Ethernet1/0/13\n下联端口:Intel(R) PRO/1000 PM Network Connection\n\n"
+	}, {
+		"faultDesc" : "",
+		"faultFlag" : 2,
+		"id" : "f0b54349-0f58-4020-8338-a677c0301e70",
+		"name" : "192.168.0.236-4227730/192.168.0.112-12",
+		"target" : {
+			"status" : 2
+		},
+		"text" : "上联设备:mj[192.168.0.236]\n下联设备:mj-PCa[192.168.0.112]\n上联端口:Ethernet1/0/14\n下联端口:Realtek PCIe FE Family Controller\n\n"
+	}, {
+		"faultDesc" : "",
+		"faultFlag" : 2,
+		"id" : "f1e9e59e-a65b-473d-ace9-c7fdf49c7ddd",
+		"name" : "192.168.0.236-4227642/192.168.0.223-11",
+		"target" : {
+			"status" : 2
+		},
+		"text" : "上联设备:mj[192.168.0.236]\n下联设备:WIN-PUOFPUNH7FL[192.168.0.223]\n上联端口:Ethernet1/0/3\n下联端口:Broadcom BCM5709C NetXtreme II GigE (NDIS VBD 客户端)\n\n"
+	}, {
+		"faultDesc" : "",
+		"faultFlag" : 2,
+		"id" : "f5810f87-3e30-4209-9cc0-3a4c04d5787d",
+		"name" : "192.168.0.236-4227642/192.168.0.246-11",
+		"target" : {
+			"status" : 2
+		},
+		"text" : "上联设备:mj[192.168.0.236]\n下联设备:WIN-7FA46RJA6KD[192.168.0.246]\n上联端口:Ethernet1/0/3\n下联端口:Intel(R) PRO/1000 MT Network Connection\n\n"
+	}],
+	"id" : "2",
+	"nodes" : [{
+		"faultDesc" : "arec-PC[192.168.0.108]的指标(ICMP响应时间)产生了不可用异常,当前值为：-1毫秒，规则：等于-1毫秒",
+		"faultFlag" : 2,
+		"id" : "331c9be0-e7b6-4742-af70-6c07e918baad",
+		"name" : "arec-PC",
+		"target" : {
+			"ICMP响应时间" : -1
+		},
+		"text" : "名称：arec-PC\nIP：192.168.0.108\n操作系统：Windows系列\n\nICMP响应时间:-1毫秒\n"
+	}, {
+		"faultDesc" : "WIN-7FA46RJA6KD[192.168.0.246]的指标(ICMP响应时间)产生了不可用异常,当前值为：-1毫秒，规则：等于-1毫秒",
+		"faultFlag" : 3,
+		"id" : "3c40e00a-3d5d-444b-9566-26adccd8df33",
+		"name" : "WIN-7FA46RJA6KD",
+		"target" : {
+			"ICMP响应时间" : -1
+		},
+		"text" : "名称：WIN-7FA46RJA6KD\nIP：192.168.0.246\n操作系统：Windows系列\n\nICMP响应时间:-1毫秒\n"
+	}, {
+		"faultDesc" : "WIN-20151111COQ[192.168.0.100]的指标(ICMP响应时间)已恢复，当前值为：23毫秒，当前阀值：",
+		"faultFlag" : 4,
+		"id" : "6822bd13-41c7-423a-ae71-107dfe687548",
+		"name" : "WIN-20151111COQ",
+		"target" : {
+			"ICMP响应时间" : 23
+		},
+		"text" : "名称：WIN-20151111COQ\nIP：192.168.0.100\n操作系统：Windows系列\n\nICMP响应时间:23毫秒\n"
+	}, {
+		"faultDesc" : "USER-5QARA5M4O3[192.168.0.222]的指标(ICMP响应时间)产生了不可用异常,当前值为：-1毫秒，规则：等于-1毫秒",
+		"faultFlag" : 5,
+		"id" : "69c67c47-5d46-497e-8191-4bff74adc874",
+		"name" : "USER-5QARA5M4O3",
+		"target" : {
+			"ICMP响应时间" : -1
+		},
+		"text" : "名称：USER-5QARA5M4O3\nIP：192.168.0.222\n操作系统：Windows系列\n\nICMP响应时间:-1毫秒\n"
+	}, {
+		"faultDesc" : "WIN-PUOFPUNH7FL[192.168.0.223]的指标(ICMP响应时间)产生了不可用异常,当前值为：-1毫秒，规则：等于-1毫秒",
+		"faultFlag" : 0,
+		"id" : "6b844655-0779-4387-9ceb-d2bf5d4637a3",
+		"name" : "WIN-PUOFPUNH7FL",
+		"target" : {
+			"ICMP响应时间" : -1
+		},
+		"text" : "名称：WIN-PUOFPUNH7FL\nIP：192.168.0.223\n操作系统：Windows系列\n\nICMP响应时间:-1毫秒\n"
+	}, {
+		"faultDesc" : "mj-PCa[192.168.0.112]的指标(ICMP响应时间)产生了不可用异常,当前值为：-1毫秒，规则：等于-1毫秒",
+		"faultFlag" : 0,
+		"id" : "86434fd2-6dfa-4c7b-8cc9-05ece89ace60",
+		"name" : "mj-PCa",
+		"target" : {
+			"ICMP响应时间" : -1
+		},
+		"text" : "名称：mj-PCa\nIP：192.168.0.112\n操作系统：Windows系列\n\nICMP响应时间:-1毫秒\n"
+	}, {
+		"faultFlag" : 0,
+		"id" : "967cb5c4-096a-4b85-9553-ca6a2caab06f",
+		"name" : "WIN-20151111COQ",
+		"target" : {
+			"ICMP响应时间" : 1,
+			"平均CPU利用率" : 92,
+			"平均内存利用率" : 57,
+			"物理内存利用率" : 54,
+			"物理内存总大小" : "5.9",
+			"虚拟内存利用率" : 60,
+			"虚拟内存总大小" : "5.9"
+		},
+		"text" : "名称：WIN-20151111COQ\nIP：192.168.0.166\n操作系统：Windows系列\n\n虚拟内存利用率:60%\nICMP响应时间:1毫秒\n平均内存利用率:57%\n物理内存利用率:54%\n平均CPU利用率:20%\n虚拟内存总大小:5.9GB\n物理内存总大小:5.9GB\n"
+	}, {
+		"faultDesc" : "bogon[192.168.0.114]的指标(ICMP响应时间)产生了不可用异常,当前值为：-1毫秒，规则：等于-1毫秒",
+		"faultFlag" : 5,
+		"id" : "abd01ddf-db07-46e2-b30b-3e054ffa3594",
+		"name" : "bogon",
+		"target" : {
+			"ICMP响应时间" : -1
+		},
+		"text" : "名称：bogon\nIP：192.168.0.114\n操作系统：Linux系列\n\nICMP响应时间:-1毫秒\n"
+	}, {
+		"faultFlag" : 1,
+		"id" : "ae39ce5e-84cf-4e44-9bdf-1bbcc25db4aa",
+		"name" : "mj",
+		"target" : {
+			"ICMP响应时间" : -1,
+			"平均CPU利用率" : 1,
+			"平均内存利用率" : 1
+		},
+		"text" : "名称：mj\nIP：192.168.0.236\n类型：网络设备\n厂商：H3C\n\nICMP响应时间:-1毫秒\n平均内存利用率:1%\n平均CPU利用率:1%\n"
+	}]
+}
