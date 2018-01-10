@@ -8,16 +8,16 @@ public class MaxHeap {
 		this.heap = array;
 		this.heapsize = heap.length;
 	}
-	//½¨Á¢×î´ó»¯
+	//å»ºç«‹æœ€å¤§åŒ–
 	public void BuildMaxHeap() {
 		for (int i = heapsize / 2 - 1; i >= 0; i--) {
-			Maxify(i);// ÒÀ´ÎÏòÉÏ½«µ±Ç°×ÓÊ÷×î´ó¶Ñ»¯
+			Maxify(i);// ä¾æ¬¡å‘ä¸Šå°†å½“å‰å­æ ‘æœ€å¤§å †åŒ–
 		}
 	}
 
 	public void HeapSort() {
 		for (int i = 0; i < heap.length; i++) {
-			// Ö´ĞĞn´Î£¬½«Ã¿¸öµ±Ç°×î´óµÄÖµ·Åµ½¶ÑÄ©Î²
+			// æ‰§è¡Œnæ¬¡ï¼Œå°†æ¯ä¸ªå½“å‰æœ€å¤§çš„å€¼æ”¾åˆ°å †æœ«å°¾
 			int tmp = heap[0];
 			heap[0] = heap[heapsize - 1];
 			heap[heapsize - 1] = tmp;
@@ -36,10 +36,10 @@ public class MaxHeap {
 			largest = i;
 		if (r < heapsize && heap[r] > heap[largest])
 			largest = r;
-		if (largest == i || largest >= heapsize)// Èç¹ûlargestµÈÓÚiËµÃ÷iÊÇ×î´óÔªËØ
-												// largest³¬³öheap·¶Î§ËµÃ÷²»´æÔÚ±Èi½Úµã´óµÄ×ÓÅ®
+		if (largest == i || largest >= heapsize)// å¦‚æœlargestç­‰äºiè¯´æ˜iæ˜¯æœ€å¤§å…ƒç´ 
+												// largestè¶…å‡ºheapèŒƒå›´è¯´æ˜ä¸å­˜åœ¨æ¯”ièŠ‚ç‚¹å¤§çš„å­å¥³
 			return;
-		int tmp = heap[i];// ½»»»iÓëlargest¶ÔÓ¦µÄÔªËØÎ»ÖÃ£¬ÔÚlargestÎ»ÖÃµİ¹éµ÷ÓÃmaxify
+		int tmp = heap[i];// äº¤æ¢iä¸largestå¯¹åº”çš„å…ƒç´ ä½ç½®ï¼Œåœ¨largestä½ç½®é€’å½’è°ƒç”¨maxify
 		heap[i] = heap[largest];
 		heap[largest] = tmp;
 		Maxify(largest);

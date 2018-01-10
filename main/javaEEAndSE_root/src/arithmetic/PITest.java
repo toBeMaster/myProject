@@ -19,6 +19,6 @@ public class PITest {
 	}
 	@Test
 	public void test1(){
-		System.out.println("Ô²ÖÜÂÊÊÇ£º"+getPI(5000000000l));
+		System.out.println("åœ†å‘¨ç‡æ˜¯ï¼š"+getPI(5000000000l));
 	}
 }

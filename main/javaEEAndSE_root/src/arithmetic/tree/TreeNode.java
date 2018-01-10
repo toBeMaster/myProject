@@ -1,53 +1,53 @@
 package arithmetic.tree;
 
 public class TreeNode {
-	// ¶¨Òå½ÚµãµÄÊôĞÔ£¬ÏÂÃæÊÇ±ØĞëÓĞµÄ£¬ÄãÒ²¿ÉÒÔ¸ù¾İĞèÑ½¶¨Òå¸ü¶à
-	private TreeNode parent; // ÉÏÒ»¸ö½Úµã£¨¸¸½Úµã£©
-	private TreeNode childLeft; // ×Ó½ÚµãÎª×ó½Úµã
-	private TreeNode childRight; // ×Ó½ÚµãµÄÎªÓÒ½Úµã
-	private int value;// ¸Ã½ÚµãµÄÈ¨Öµ£¬Ö÷ÒªÊÇ¸ù¾İËüÀ´¹¹ÔìÊ÷
+	// å®šä¹‰èŠ‚ç‚¹çš„å±æ€§ï¼Œä¸‹é¢æ˜¯å¿…é¡»æœ‰çš„ï¼Œä½ ä¹Ÿå¯ä»¥æ ¹æ®éœ€å‘€å®šä¹‰æ›´å¤š
+	private TreeNode parent; // ä¸Šä¸€ä¸ªèŠ‚ç‚¹ï¼ˆçˆ¶èŠ‚ç‚¹ï¼‰
+	private TreeNode childLeft; // å­èŠ‚ç‚¹ä¸ºå·¦èŠ‚ç‚¹
+	private TreeNode childRight; // å­èŠ‚ç‚¹çš„ä¸ºå³èŠ‚ç‚¹
+	private int value;// è¯¥èŠ‚ç‚¹çš„æƒå€¼ï¼Œä¸»è¦æ˜¯æ ¹æ®å®ƒæ¥æ„é€ æ ‘
 
-	// ÖØÔØ¹¹Ôì·½·¨£¬ÔÚ´´½¨¶ÔÏóÊ±±ØĞë´«ÈëvalueÊı¾İ
+	// é‡è½½æ„é€ æ–¹æ³•ï¼Œåœ¨åˆ›å»ºå¯¹è±¡æ—¶å¿…é¡»ä¼ å…¥valueæ•°æ®
 	public TreeNode(int value) {
 		this.value = value;
 	}
 
-	// ÉèÖÃÊÇÒ»¸ö¸¸½ÚµãµÄ·½·¨(¼´ÉÏÒ»¸ö½Úµã£©
+	// è®¾ç½®æ˜¯ä¸€ä¸ªçˆ¶èŠ‚ç‚¹çš„æ–¹æ³•(å³ä¸Šä¸€ä¸ªèŠ‚ç‚¹ï¼‰
 	public void setParent(TreeNode parent) {
 		this.parent = parent;
 	}
 
-	// /»ñµÃÉÏÒ»¸ö½ÚµãµÄ·½·¨
+	// /è·å¾—ä¸Šä¸€ä¸ªèŠ‚ç‚¹çš„æ–¹æ³•
 	public TreeNode getParent() {
 		return parent;
 	}
 
-	// ÉèÖÃ×Ó½Úµã£¨×ó½Úµã£©µÄ·½·¨
+	// è®¾ç½®å­èŠ‚ç‚¹ï¼ˆå·¦èŠ‚ç‚¹ï¼‰çš„æ–¹æ³•
 	public void setChildLeft(TreeNode childLeft) {
 		this.childLeft = childLeft;
 	}
 
-	// »ñµÃ×Ó½Úµã£¨×ó½Úµã£©µÄ·½·¨
+	// è·å¾—å­èŠ‚ç‚¹ï¼ˆå·¦èŠ‚ç‚¹ï¼‰çš„æ–¹æ³•
 	public TreeNode getChildLeft() {
 		return childLeft;
 	}
 
-	// ÉèÖÃ×Ó½Úµã£¨×ó½Úµã£©µÄ·½·¨
+	// è®¾ç½®å­èŠ‚ç‚¹ï¼ˆå·¦èŠ‚ç‚¹ï¼‰çš„æ–¹æ³•
 	public void setChildRight(TreeNode childRight) {
 		this.childRight = childRight;
 	}
 
-	// »ñµÃ×Ó½Úµã£¨×ó½Úµã£©µÄ·½·¨
+	// è·å¾—å­èŠ‚ç‚¹ï¼ˆå·¦èŠ‚ç‚¹ï¼‰çš„æ–¹æ³•
 	public TreeNode getChildRight() {
 		return childRight;
 	}
 
-	// ÉèÖÃÈ¨ÖµµÄ·½·¨
+	// è®¾ç½®æƒå€¼çš„æ–¹æ³•
 	public void setValue(int value) {
 		this.value = value;
 	}
 
-	// »ñµÃÈ¨ÖµµÄ·½·¨
+	// è·å¾—æƒå€¼çš„æ–¹æ³•
 	public int getValue() {
 		return value;
 	}

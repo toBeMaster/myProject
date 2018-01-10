@@ -8,12 +8,12 @@ import org.junit.Test;
 public class HuffmanTree {
 	public static List<TreeNode> list = new ArrayList<TreeNode>();
 
-	// Ã°Åİ·¨¶ÔÊı×é½øĞĞÅÅĞò£¬¼´¶ÔÈ¨Öµ½øĞĞÅÅĞò,°´´ÓĞ¡µ½´ó½øĞĞÅÅĞò£¬Í¬Ê±·â×°³É½Úµã£¬×°Èë¶ÓÁĞÖĞ£¬listÊÇ´´½¨µÄÒ»¸ö¶ÓÁĞ¶ÔÏó
+	// å†’æ³¡æ³•å¯¹æ•°ç»„è¿›è¡Œæ’åºï¼Œå³å¯¹æƒå€¼è¿›è¡Œæ’åº,æŒ‰ä»å°åˆ°å¤§è¿›è¡Œæ’åºï¼ŒåŒæ—¶å°è£…æˆèŠ‚ç‚¹ï¼Œè£…å…¥é˜Ÿåˆ—ä¸­ï¼Œlistæ˜¯åˆ›å»ºçš„ä¸€ä¸ªé˜Ÿåˆ—å¯¹è±¡
 	public void sortValue(int[] array) {
-		// Ã°ÅİÅÅĞòµÄ¹ı³Ì
+		// å†’æ³¡æ’åºçš„è¿‡ç¨‹
 		for (int i = 0; i < array.length; i++) {
 			for (int j = i + 1; j < array.length; j++) {
-				if (array[i] > array[j]) {// ±È½Ï´óĞ¡
+				if (array[i] > array[j]) {// æ¯”è¾ƒå¤§å°
 					int temp = array[i];
 					array[i] = array[j];
 					array[j] = temp;
@@ -21,51 +21,51 @@ public class HuffmanTree {
 			}
 		}
 		for(int i=0;i<array.length;i++){
-			 //´´½¨½Úµã¶ÔÏó£¬²¢°ÑËü×°Èë¶ÓÁĞÖĞ   
+			 //åˆ›å»ºèŠ‚ç‚¹å¯¹è±¡ï¼Œå¹¶æŠŠå®ƒè£…å…¥é˜Ÿåˆ—ä¸­   
 			  TreeNode node=new TreeNode(array[i]);   
 			  list.add(node);   
 		}
 		
 	}
 
-	// Éú³É¹ş·òÂüÊ÷µÄ·½·¨
+	// ç”Ÿæˆå“ˆå¤«æ›¼æ ‘çš„æ–¹æ³•
 	public void createTree(int[] array) {
-		// µ÷ÓÃsortValue·½·¨£¬½«Ò¶×Ó½Úµã½øĞĞ·â×°
+		// è°ƒç”¨sortValueæ–¹æ³•ï¼Œå°†å¶å­èŠ‚ç‚¹è¿›è¡Œå°è£…
 		this.sortValue(array);
-		// ¸ù¾İ¹ş·òÂü±àÂëµÄÔ­Àí£¬½¨Á¢¹ş·òÂüÊ÷
-		while (list.size() > 1) {// ½ÚµãÊ÷´óÓÚÒ»Ê±£¬²Å½øĞĞÈçÏÂ²Ù×÷
-			TreeNode leftnode = list.remove(0);// »ñµÃ×ó½Úµã
-			TreeNode rightnode = list.remove(0);// »ñµÃÓÒ½Úµã
-			// ¸ù¾İÕâÁ½¸ö½Úµã£¬´´½¨ËüÃÇµÄ¸¸½Úµã
+		// æ ¹æ®å“ˆå¤«æ›¼ç¼–ç çš„åŸç†ï¼Œå»ºç«‹å“ˆå¤«æ›¼æ ‘
+		while (list.size() > 1) {// èŠ‚ç‚¹æ ‘å¤§äºä¸€æ—¶ï¼Œæ‰è¿›è¡Œå¦‚ä¸‹æ“ä½œ
+			TreeNode leftnode = list.remove(0);// è·å¾—å·¦èŠ‚ç‚¹
+			TreeNode rightnode = list.remove(0);// è·å¾—å³èŠ‚ç‚¹
+			// æ ¹æ®è¿™ä¸¤ä¸ªèŠ‚ç‚¹ï¼Œåˆ›å»ºå®ƒä»¬çš„çˆ¶èŠ‚ç‚¹
 			int value = leftnode.getValue() + rightnode.getValue();
 			TreeNode parentnode = new TreeNode(value);
-			// ¸øÕâÈı¸ö½Úµã½¨Á¢¶ÔÓ¦µÄ¹ØÏµ
+			// ç»™è¿™ä¸‰ä¸ªèŠ‚ç‚¹å»ºç«‹å¯¹åº”çš„å…³ç³»
 			leftnode.setParent(parentnode);
 			rightnode.setParent(parentnode);
 			parentnode.setChildLeft(leftnode);
 			parentnode.setChildRight(rightnode);
-			// ½«ÕâÁ½¸ö½ÚµãµÄ¸¸½Úµã×°Èë¶ÓÁĞÖĞ£¬²¢¶ÔËüÃÇ½øĞĞÅÅÁĞ
+			// å°†è¿™ä¸¤ä¸ªèŠ‚ç‚¹çš„çˆ¶èŠ‚ç‚¹è£…å…¥é˜Ÿåˆ—ä¸­ï¼Œå¹¶å¯¹å®ƒä»¬è¿›è¡Œæ’åˆ—
 			this.sortAgain(parentnode);
 		}
 		
 	}
 
 	public void sortAgain(TreeNode newnode) {
-		// ÒòÎªÀïÃæµÄ½ÚµãÒÑ¾­ÅÅºÃĞòÁË£¬ËùÒÔÖ»ÊÇ½«ĞÂ½Úµã²åÈë¶ÔÓ¦µÄÎ»ÖÃ¾Í¿ÉÒÔÁË
+		// å› ä¸ºé‡Œé¢çš„èŠ‚ç‚¹å·²ç»æ’å¥½åºäº†ï¼Œæ‰€ä»¥åªæ˜¯å°†æ–°èŠ‚ç‚¹æ’å…¥å¯¹åº”çš„ä½ç½®å°±å¯ä»¥äº†
 		int size = list.size();
-		if (size > 0) {// ÀïÃæÖÁÉÙÓĞÒ»¸ö½Úµã²ÅÄÜ½øĞĞ±È½Ï
-			if (newnode.getValue() > list.get(size - 1).getValue()) {// Èç¹ûÒª¼ÓÈëµÄ½ÚµãµÄÈ¨Öµ´óÓÚ¶ÓÁĞÖĞ×îºóÒ»¸ö½ÚµãµÄÈ¨Öµ£¬Ôò·Åµ½×îºóÃæ
+		if (size > 0) {// é‡Œé¢è‡³å°‘æœ‰ä¸€ä¸ªèŠ‚ç‚¹æ‰èƒ½è¿›è¡Œæ¯”è¾ƒ
+			if (newnode.getValue() > list.get(size - 1).getValue()) {// å¦‚æœè¦åŠ å…¥çš„èŠ‚ç‚¹çš„æƒå€¼å¤§äºé˜Ÿåˆ—ä¸­æœ€åä¸€ä¸ªèŠ‚ç‚¹çš„æƒå€¼ï¼Œåˆ™æ”¾åˆ°æœ€åé¢
 				list.add(newnode);
-			} else {// ·ñÔò²ÅÈ¥½øĞĞ±È½Ï
+			} else {// å¦åˆ™æ‰å»è¿›è¡Œæ¯”è¾ƒ
 				for (int i = 0; i < list.size(); i++) {
-					TreeNode node = list.get(i);// °´Ë³ĞòµÃµ½½Úµã
-					if (newnode.getValue() <= node.getValue()) {// ±È½ÏËüÃÇµÄÈ¨Öµ
-						list.add(i, newnode);// ½«ĞÂ½ÚµãÌí¼Óµ½Ö¸¶¨µÄÎ»ÖÃ
-						break;// ½áÊøÑ­»·
+					TreeNode node = list.get(i);// æŒ‰é¡ºåºå¾—åˆ°èŠ‚ç‚¹
+					if (newnode.getValue() <= node.getValue()) {// æ¯”è¾ƒå®ƒä»¬çš„æƒå€¼
+						list.add(i, newnode);// å°†æ–°èŠ‚ç‚¹æ·»åŠ åˆ°æŒ‡å®šçš„ä½ç½®
+						break;// ç»“æŸå¾ªç¯
 					}
 				}
 			}
-		} else {// ·ñÔòÖ±½Ó¼Ó½øÈ¥
+		} else {// å¦åˆ™ç›´æ¥åŠ è¿›å»
 			list.add(newnode);
 		}
 	}

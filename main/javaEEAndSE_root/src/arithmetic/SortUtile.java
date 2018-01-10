@@ -10,15 +10,15 @@ public class SortUtile {
 	 public void quickSort(int[] a,int left,int right){
          int ltemp = left;
          int rtemp = right;
-         int key = a[(left+right)/2];//·Ö½çÖµ
+         int key = a[(left+right)/2];//åˆ†ç•Œå€¼
          int t;
          
          while(ltemp<rtemp){
-             //´ÓÇ°Íùºó±È½Ï
-             while( a[ltemp]<key)//Èç¹ûÃ»ÓĞ±È¹Ø¼üÖµ´óµÄ£¬±È½ÏÏÂÒ»¸ö£¬Ö±µ½ÓĞ±È¹Ø¼üÖµ´óµÄ½»»»Î»ÖÃ
+             //ä»å‰å¾€åæ¯”è¾ƒ
+             while( a[ltemp]<key)//å¦‚æœæ²¡æœ‰æ¯”å…³é”®å€¼å¤§çš„ï¼Œæ¯”è¾ƒä¸‹ä¸€ä¸ªï¼Œç›´åˆ°æœ‰æ¯”å…³é”®å€¼å¤§çš„äº¤æ¢ä½ç½®
                 ltemp++;
-             //´ÓºóÍùÇ°±È½Ï
-             while( a[rtemp]>key)  //Èç¹ûÃ»ÓĞ±È¹Ø¼üÖµĞ¡µÄ£¬±È½ÏÏÂÒ»¸ö£¬Ö±µ½ÓĞ±È¹Ø¼üÖµĞ¡µÄ½»»»Î»ÖÃ£¬È»ºóÓÖ´ÓÇ°Íùºó±È½Ï
+             //ä»åå¾€å‰æ¯”è¾ƒ
+             while( a[rtemp]>key)  //å¦‚æœæ²¡æœ‰æ¯”å…³é”®å€¼å°çš„ï¼Œæ¯”è¾ƒä¸‹ä¸€ä¸ªï¼Œç›´åˆ°æœ‰æ¯”å…³é”®å€¼å°çš„äº¤æ¢ä½ç½®ï¼Œç„¶ååˆä»å‰å¾€åæ¯”è¾ƒ
                  rtemp--;
              if(ltemp<rtemp){
                    t = a[ltemp];
@@ -28,26 +28,26 @@ public class SortUtile {
                  ltemp++;
                  rtemp--;
              }
-       //  ´ËÊ±µÚÒ»´ÎÑ­»·±È½Ï½áÊø£¬¹Ø¼üÖµµÄÎ»ÖÃÒÑ¾­È·¶¨ÁË¡£×ó±ßµÄÖµ¶¼±È¹Ø¼üÖµĞ¡£¬ÓÒ±ßµÄÖµ¶¼±È¹Ø¼üÖµ´ó£¬µ«ÊÇÁ½±ßµÄË³Ğò»¹ÓĞ¿ÉÄÜÊÇ²»Ò»ÑùµÄ£¬½øĞĞÏÂÃæµÄµİ¹éµ÷ÓÃ
-             System.out.print("\nµÚ"+(++step)+"´ÎÅÅĞò½á¹û£º");
+       //  æ­¤æ—¶ç¬¬ä¸€æ¬¡å¾ªç¯æ¯”è¾ƒç»“æŸï¼Œå…³é”®å€¼çš„ä½ç½®å·²ç»ç¡®å®šäº†ã€‚å·¦è¾¹çš„å€¼éƒ½æ¯”å…³é”®å€¼å°ï¼Œå³è¾¹çš„å€¼éƒ½æ¯”å…³é”®å€¼å¤§ï¼Œä½†æ˜¯ä¸¤è¾¹çš„é¡ºåºè¿˜æœ‰å¯èƒ½æ˜¯ä¸ä¸€æ ·çš„ï¼Œè¿›è¡Œä¸‹é¢çš„é€’å½’è°ƒç”¨
+             System.out.print("\nç¬¬"+(++step)+"æ¬¡æ’åºç»“æœï¼š");
              for(int i = 0; i<a.length; i++){
                  System.out.print( a[i]+" ");
              }
-             System.out.println("  »ùÊı£º"+key);
+             System.out.println("  åŸºæ•°ï¼š"+key);
          }
          if(ltemp==rtemp) ltemp++;
-         //µİ¹é
-         if(left<rtemp) quickSort(a,left,ltemp-1);//×ó±ßĞòÁĞ¡£µÚÒ»¸öË÷ÒıÎ»ÖÃµ½¹Ø¼üÖµË÷Òı-1
-         if(ltemp<right) quickSort(a,rtemp+1,right);//ÓÒ±ßĞòÁĞ¡£´Ó¹Ø¼üÖµË÷Òı+1µ½×îºóÒ»¸ö
+         //é€’å½’
+         if(left<rtemp) quickSort(a,left,ltemp-1);//å·¦è¾¹åºåˆ—ã€‚ç¬¬ä¸€ä¸ªç´¢å¼•ä½ç½®åˆ°å…³é”®å€¼ç´¢å¼•-1
+         if(ltemp<right) quickSort(a,rtemp+1,right);//å³è¾¹åºåˆ—ã€‚ä»å…³é”®å€¼ç´¢å¼•+1åˆ°æœ€åä¸€ä¸ª
      }
-	 //´ÓµÚ¶ş¸öÊıÒÀ´ÎÍùºóÓëÇ°±È½Ï£¬²åÈëµ½ºÏÊÊÎ»ÖÃ
-	 //µÚ¶ş¸öÈç¹û´óÓÚµÚÒ»¸öÔòÖ´ĞĞµÚÈı¸ö±È½Ï£¬´ËÊ±Ç°Á½¸öÒÑ¾­ÅÅºÃĞò£¬
-	 //µÚÈı¸öÊı£¨´ı²åÈëÊı£©Èç¹ûĞ¡ÓÚµÚ¶ş¸öÊı£¬µÚ¶ş¸öÊıÏÈÒÆµ½µÚÈı¸öÎ»ÖÃ£¬
-	 //´ı²åÈëÊı¼ÌĞøÏòÇ°±È½Ï£¬Ç°ÃæÈç¹û¼ÌĞø´óÓÚÔòÖğ¸öºóÒÆÒ»Î»£¬
-	 //·ñÔòµ±Ç°Î»ÖÃºóÒ»Î»Îª´ı²åÈëÊı
+	 //ä»ç¬¬äºŒä¸ªæ•°ä¾æ¬¡å¾€åä¸å‰æ¯”è¾ƒï¼Œæ’å…¥åˆ°åˆé€‚ä½ç½®
+	 //ç¬¬äºŒä¸ªå¦‚æœå¤§äºç¬¬ä¸€ä¸ªåˆ™æ‰§è¡Œç¬¬ä¸‰ä¸ªæ¯”è¾ƒï¼Œæ­¤æ—¶å‰ä¸¤ä¸ªå·²ç»æ’å¥½åºï¼Œ
+	 //ç¬¬ä¸‰ä¸ªæ•°ï¼ˆå¾…æ’å…¥æ•°ï¼‰å¦‚æœå°äºç¬¬äºŒä¸ªæ•°ï¼Œç¬¬äºŒä¸ªæ•°å…ˆç§»åˆ°ç¬¬ä¸‰ä¸ªä½ç½®ï¼Œ
+	 //å¾…æ’å…¥æ•°ç»§ç»­å‘å‰æ¯”è¾ƒï¼Œå‰é¢å¦‚æœç»§ç»­å¤§äºåˆ™é€ä¸ªåç§»ä¸€ä½ï¼Œ
+	 //å¦åˆ™å½“å‰ä½ç½®åä¸€ä½ä¸ºå¾…æ’å…¥æ•°
 	 public static void insertSort(int[] a){
 		 int i,j,insertNum;
-		 // t ÊÇÒªÒª²åÈëµÄÊı
+		 // t æ˜¯è¦è¦æ’å…¥çš„æ•°
 		 for(i=1;i<a.length;i++){
 			 insertNum = a[i];
 			 j=i-1;
@@ -56,7 +56,7 @@ public class SortUtile {
 				 j--;
 			 }
 			 a[j+1] =insertNum;
-			 System.out.print("\nµÚ"+i+"´ÎÅÅĞò½á¹û£º");
+			 System.out.print("\nç¬¬"+i+"æ¬¡æ’åºç»“æœï¼š");
 			 for(int h=0;h<a.length;h++){
 				 System.out.print(a[h]+" ");
 			 }
@@ -64,20 +64,20 @@ public class SortUtile {
 	 }
 	 public static void shellSort(int[] a){
 		 int i,j,h;
-		 int r,temp;//r Ëù·Ö×éÊı£¬temp,ÖĞ¼ä½»»»±äÁ¿
+		 int r,temp;//r æ‰€åˆ†ç»„æ•°ï¼Œtemp,ä¸­é—´äº¤æ¢å˜é‡
 		 int x=0;
-		 for(r=a.length/2;r>=1;r/=2){//·Ö¶Î
+		 for(r=a.length/2;r>=1;r/=2){//åˆ†æ®µ
 			 for(i=r;i<a.length;i++){
 				 temp = a[i];
 				 j=i-r;
-				 while(j>=0&&temp<a[j]){//ÕâÀïÊÇ²åÈëÅÅĞòÂß¼­
+				 while(j>=0&&temp<a[j]){//è¿™é‡Œæ˜¯æ’å…¥æ’åºé€»è¾‘
 					 a[j+r] = a[j];
-					 j-=r;//¶à¸ö·Ö×é
+					 j-=r;//å¤šä¸ªåˆ†ç»„
 				 }
 				 a[j+r]=temp;
 			 }
 			 x++;
-			 System.out.print("µÚ"+x+"²½ÅÅĞòÊÇ£º");
+			 System.out.print("ç¬¬"+x+"æ­¥æ’åºæ˜¯ï¼š");
 			 for( h = 0; h<a.length; h++){
 		            System.out.print( a[h]+" ");
 		     }
@@ -90,13 +90,13 @@ public class SortUtile {
         int[] a = ARRAY;
         int start = 0;
         int end = a.length-1;
-        System.out.print("ÅÅĞòÇ°£º " );
+        System.out.print("æ’åºå‰ï¼š " );
         for(int i = 0; i<a.length; i++){
             System.out.print( a[i]+" ");
         }
         System.out.println( );
         quickSort(a,start,end);
-        System.out.println("\nÅÅĞòºó£º ");
+        System.out.println("\næ’åºåï¼š ");
         for(int i = 0; i<a.length; i++){
         	System.out.print( a[i]+" ");
          }
@@ -105,13 +105,13 @@ public class SortUtile {
 	 @Test
 	 public void test2( ){
 		 int[] a = ARRAY;
-		 System.out.print("ÅÅĞòÇ°£º " );
+		 System.out.print("æ’åºå‰ï¼š " );
 		 for(int i = 0; i<a.length; i++){
 			 System.out.print( a[i]+" ");
 		 }
 		 System.out.println( );
 		 insertSort(a);
-		 System.out.println("\nÅÅĞòºó£º ");
+		 System.out.println("\næ’åºåï¼š ");
 		 for(int i = 0; i<a.length; i++){
 			 System.out.print( a[i]+" ");
 		 }
@@ -120,13 +120,13 @@ public class SortUtile {
 	 @Test
 	 public void test3( ){
 		 int[] a = ARRAY;
-		 System.out.print("ÅÅĞòÇ°£º " );
+		 System.out.print("æ’åºå‰ï¼š " );
 		 for(int i = 0; i<a.length; i++){
 			 System.out.print( a[i]+" ");
 		 }
 		 System.out.println( );
 		 shellSort(a);
-		 System.out.println("\nÅÅĞòºó£º ");
+		 System.out.println("\næ’åºåï¼š ");
 		 for(int i = 0; i<a.length; i++){
 			 System.out.print( a[i]+" ");
 		 }
@@ -135,13 +135,13 @@ public class SortUtile {
 	 @Test
 	 public void test4( ){
 		 int[] a = ARRAY;
-		 System.out.print("ÅÅĞòÇ°£º " );
+		 System.out.print("æ’åºå‰ï¼š " );
 		 for(int i = 0; i<a.length; i++){
 			 System.out.print( a[i]+" ");
 		 }
 		 System.out.println( );
 		 quickSort(a, 0, a.length-1);
-		 System.out.println("\nÅÅĞòºó£º ");
+		 System.out.println("\næ’åºåï¼š ");
 		 for(int i = 0; i<a.length; i++){
 			 System.out.print( a[i]+" ");
 		 }
