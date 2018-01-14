@@ -2,11 +2,7 @@
 <%@ include file="../inc/path.inc"%>
 <%@ include file="../inc/head.inc"%>
 <%
-	UserDTO user = (UserDTO)request.getAttribute("user");
 	String userId = null;
-	if(user!=null){
-		userId = user.getId();
-	}
 %>
 <!DOCTYPE HTML>
 <html style="width:100%;height:100%;">

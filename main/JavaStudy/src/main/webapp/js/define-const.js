@@ -31,3 +31,8 @@ function defineConst(props) {
 
     return obj;
 }
+var Const = defineConst({
+    PI: 3.14,
+    MAX: 10000,
+    MIN: -10000
+});
