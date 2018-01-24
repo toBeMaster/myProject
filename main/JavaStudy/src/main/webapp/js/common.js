@@ -64,3 +64,16 @@ function containSpecial( s )
     var containSpecial = RegExp(/[(\ )(\~)(\!)(\@)(\#)  (\$)(\%)(\^)(\&)(\*)(\()(\))(\-)(\_)(\+)(\=)(\[)(\])(\{)(\})(\|)(\\)(\;)(\:)(\')(\")(\,)(\.)(\/)(\<)(\>)(\?)(\)]+/);      
     return ( containSpecial.test(s) );      
 } 
+/**
+ * 请求全屏
+ */
+function requestFullScreen() {
+    var de = document.documentElement;
+    if (de.requestFullscreen) {
+        de.requestFullscreen();
+    } else if (de.mozRequestFullScreen) {
+        de.mozRequestFullScreen();
+    } else if (de.webkitRequestFullScreen) {
+        de.webkitRequestFullScreen();
+    }
+}
