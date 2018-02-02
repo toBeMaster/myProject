@@ -137,6 +137,29 @@ function getRow(id, dgId) {
 	return o;
 }
 /**
+ * 获取行数据，并且重置行索引
+ * author: 魏峰
+ * @param id
+ * @param dgId
+ * @returns {___anonymous662_662}
+ */
+function getIndex(id, dgId) {
+	dgId = dgId || "datagrid";
+	var o = null;
+	var data = $("#" + dgId).datagrid("getData");
+	if (data && data.rows.length > 0) {
+		for (var i = 0; i < data.rows.length; i++) {
+			var obj = data.rows[i];
+			if (obj.id == id) {
+				o = obj;
+				o.rowIndex = i;
+				break;
+			}
+		}
+	}
+	return o.rowIndex;
+}
+/**
  * 双表联动 实现左右移动 要求字段一致
  * author: wf
  * @ methodName moveTo

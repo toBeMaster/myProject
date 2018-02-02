@@ -68,3 +68,13 @@ function removeEvents(target, type, func){
 	else if (target.detachEvent) 
 	target.detachEvent("on" + type, func); 
 }
+/**
+ * 阻止事件冒泡
+ * @param e
+ */
+function stopBubble(e)  
+{  
+    var evt = e || window.event;  
+    //IE用cancelBubble=true来阻止而FF下需要用stopPropagation方法  
+    evt.stopPropagation ? evt.stopPropagation() : (evt.cancelBubble=true);  
+} 
