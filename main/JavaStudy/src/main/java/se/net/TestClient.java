@@ -1,11 +1,11 @@
 package se.net;
 
-/*	·¶ÀıÃû³Æ£º¼òµ¥µÄclient/server³ÌĞò
- * 	Ô´ÎÄ¼şÃû³Æ£ºTestClient.java/TestServer.java
- *	Òª  µã£º
- *		1. Java Socket±à³Ì²½Öè
- *		2. Socket/ServerSocketÀàÓÃ·¨
- *		3. Í¨¹ıSocket¶ÔÏó¿ÉÒÔ»ñÈ¡Í¨ĞÅ¶Ô·½SocketµÄĞÅÏ¢
+/*	ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ£ï¿½ï¿½òµ¥µï¿½client/serverï¿½ï¿½ï¿½ï¿½
+ * 	Ô´ï¿½Ä¼ï¿½ï¿½ï¿½Æ£ï¿½TestClient.java/TestServer.java
+ *	Òª  ï¿½ã£º
+ *		1. Java Socketï¿½ï¿½Ì²ï¿½ï¿½ï¿½
+ *		2. Socket/ServerSocketï¿½ï¿½ï¿½Ã·ï¿½
+ *		3. Í¨ï¿½ï¿½Socketï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô»ï¿½È¡Í¨ï¿½Å¶Ô·ï¿½Socketï¿½ï¿½ï¿½ï¿½Ï¢
  */
 
 import java.net.*;
@@ -22,7 +22,7 @@ public class TestClient {
 			s1.close();
 		} catch (ConnectException connExc) {
 			connExc.printStackTrace();
-			System.err.println("·şÎñÆ÷Á¬½ÓÊ§°Ü£¡");
+			System.err.println("hello excetion");
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

@@ -45,10 +45,10 @@ public class StringUtil {
 			String newString) {
 		File src = new File(filePath);
 		String cont = StringUtil.read(src);
-		// 对得到的内容进行处理
+		// 锟皆得碉拷锟斤拷锟斤拷锟捷斤拷锟叫达拷锟斤拷
 		cont = cont.replaceAll(regex, "");
 		System.out.println(cont);
-		// 更新源文件
+		// 锟斤拷锟斤拷源锟侥硷拷
 		StringUtil.write(cont, src);
 		return true;
 	}
@@ -56,5 +56,12 @@ public class StringUtil {
 	public void optimizeJsxml(){
 		String filePath = "resource/report/report2.jrxml";
 		replaceFile(filePath,"(splitType=\"[a-zA-Z]{1,20}\")|(language=\"[a-zA-Z]{1,20}\")|(uuid=\"[0-9a-zA-Z\\-]{1,60}\")","");
+	}
+	@Test
+	public void testSubstring(){
+		String destFileConvertion ="/abc/ ";
+		destFileConvertion =destFileConvertion.substring(0,destFileConvertion.lastIndexOf("/"));
+		String parentDirectory = destFileConvertion.substring(0,destFileConvertion.lastIndexOf("/"));
+		System.out.println("mm:"+parentDirectory);
 	}
 }

@@ -10,8 +10,17 @@
 function copyProperties(des,ori,filterParams,filterType){
 	if(!des) des = new Object();
 	for(var p in ori){
-		if(filterParams&& $.inArray(p,filterParams)){
-			continue;  //skip  params in filterparams
+		if(filterParams){
+			var flag = false;
+			for(var pp in filterParams){
+				if(pp == p){
+					flag = true;
+					break;
+				}
+			}
+			if(flag===true){
+				continue;  //skip  params in filterparams
+			}
 		}
 		if((filterType&1)==1 && typeof p =="function"){//xxx1
 			continue;//skip the p ,disable function

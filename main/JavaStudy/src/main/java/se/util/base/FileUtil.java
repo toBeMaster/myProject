@@ -3,7 +3,9 @@ package se.util.base;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
+import java.net.URL;
 
+import org.apache.commons.lang3.StringUtils;
 import org.apache.log4j.Logger;
 
 /**
@@ -176,5 +178,23 @@ public class FileUtil {
 			return false;
 		return true;
 	}
-
+	public static String getFileType(String fileName){
+		String fileType="text";
+		fileName = fileName.toLowerCase();
+		if(fileName.endsWith(".jpg") || fileName.endsWith(".png") || fileName.endsWith(".gif")){
+			fileType = "image";
+		}else if(fileName.endsWith(".txt")){
+			fileType = "text";
+		}
+		return fileType;
+	}
+	 private static String getResourcePath() {
+	        String className = FileUtil.class.getName();
+	        String classNamePath = className.replace(".", "/") + ".class";
+	        URL is = FileUtil.class.getClassLoader().getResource(classNamePath);
+	        String path = is.getFile();
+	        path = StringUtils.replace(path, "%20", " ");
+	 
+	        return StringUtils.removeStart(path, "/");
+	    }			
 }

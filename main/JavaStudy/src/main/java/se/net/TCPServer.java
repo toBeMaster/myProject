@@ -8,7 +8,7 @@ public class TCPServer {
 		ServerSocket ss = new ServerSocket(6666);
 		while (true) {
 			Socket s = ss.accept();
-			System.out.println("a client connect!");
+			System.out.println("a client connect!\n"+s.getInetAddress().getHostAddress()+"/"+s.getInetAddress().getHostName());
 			DataInputStream dis = new DataInputStream(s.getInputStream());
 			System.out.println("test!");
 			System.out.println("---"+dis.readUTF());
