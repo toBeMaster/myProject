@@ -12,7 +12,6 @@ import java.util.Locale;
 import javax.servlet.ServletOutputStream;
 import javax.servlet.ServletResponse;
 
-import se.util.base.FileUtil;
 
 
 public class Response implements ServletResponse {

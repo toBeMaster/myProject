@@ -9,10 +9,6 @@ import java.sql.SQLException;
 import DB.DBUtil;
 
 /**
- * 项目名称：StudyEEAndSE 类名称：ConnectSql 类描述： 创建人：魏峰 创建时间：2017年4月1日 下午4:40:40
- * 修改时间：2017年4月1日 下午4:40:40 修改备注：
- * 
- * @version
  * 
  */
 public class ConnectSql {

@@ -1,4 +1,5 @@
 package extension.web.simpleServer;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
@@ -12,7 +13,7 @@ import java.net.Socket;
  * @author guoshaocheng
  * 
  */
-public class MyHttpRequestHandler1 implements Runnable {
+class MyHttpRequestHandler1 implements Runnable {
 
 	private Socket accept;
 
@@ -22,7 +23,8 @@ public class MyHttpRequestHandler1 implements Runnable {
 
 	@Override
 	public void run() {
-		System.out.println("===================接受到请求，开始处理=========================");
+
+		System.out.println("接受到请求，开始处理");
 		try {
 
 			// 读取数据
@@ -45,23 +47,16 @@ public class MyHttpRequestHandler1 implements Runnable {
 			System.out.println("最终读取数据：\n" + bufferStr);
 
 			// 返回数据
-			System.out.println("\n\n\n---------------向浏览器返回数据------------------");
+			System.out
+					.println("\n\n\n------------------向浏览器返回数据---------------------");
 			String[] split = bufferStr.split("\r");
 			String requestUrl = (split[0].split(" "))[1];
 			System.out.println("请求路径为：" + requestUrl);
-			String[] requestPart = requestUrl.split("\\?");
-			System.out.println("请求参数：");
-			if(requestPart!=null&& requestPart.length>1){
-				String[] requestParams = requestPart[1].split("&");
-				if(requestParams!=null){
-					for(String str:requestParams){
-						System.out.println(str);
-					}
-				}
-			}
+			String[] requestParams = requestUrl.split("\\?")[1].split("&");
+			System.out.println("请求参数：" + requestParams);
 
-			String responseContent ="hello Server!";/* (Integer.valueOf(requestParams[0]))
-					+ (Integer.valueOf(requestParams[1])) + ""*/ 
+			String responseContent = (Integer.valueOf(requestParams[0]))
+					+ (Integer.valueOf(requestParams[1])) + "";
 			System.out.println("返回内容为:\n" + responseContent);
 			OutputStream oStream = accept.getOutputStream();
 			oStream.write(responseContent.getBytes());

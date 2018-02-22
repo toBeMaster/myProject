@@ -11,27 +11,25 @@ public class Department implements Serializable{
 	 */
 	private static final long serialVersionUID = -5569625750091908772L;
 	/**
-	 * 部门ID
+ 
 	 */
 	private String id;
 	/**
-	 * 部门名称
+ 
 	 */
 	private String departmentName;
 	/**
-	 * 父ID
+ 
 	 */
 	private String parentId;
 	/**
-	 * 序号
+ 
 	 */
 	private int sn;
 	/**
-	 * 描述
 	 */
 	private String described;
 	/**
-	 * 是否删除，0：未删除 1：已删除
 	 */
 	private int isDeleted;
 	/**

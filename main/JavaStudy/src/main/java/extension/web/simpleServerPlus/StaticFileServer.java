@@ -3,14 +3,6 @@ package extension.web.simpleServerPlus;
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
-import java.net.URL;
-import java.util.Properties;
-
-import org.apache.commons.lang3.StringUtils;
-import org.junit.Test;
-
-import se.util.base.FileUtil;
-import se.util.base.PropsUtil;
 
 /**
  * 静态文件服务器，使用浏览器可以访问指定文件
@@ -23,7 +15,7 @@ public class StaticFileServer {
 	private static String baseDir = "D:\\";
 	public static int PORT = 8096;
 	public static void main(String[] args) {
-		parseConfig();
+	//	parseConfig();
 		new StaticFileServer().service();
 
 	}
@@ -61,7 +53,7 @@ public class StaticFileServer {
 		}
 	}
 	
-	 private static String getResourcePath() {
+	/* private static String getResourcePath() {
 	        String className = StaticFileServer.class.getName();
 	        String classNamePath = className.replace(".", "/") + ".class";
 	        URL is = FileUtil.class.getClassLoader().getResource(classNamePath);
@@ -71,7 +63,9 @@ public class StaticFileServer {
 	        return StringUtils.removeStart(path, "/");
 	    }
 	 private static void parseConfig(){
-		 PropsUtil propsUtil = new PropsUtil("conf.properties");
+		 String className = StaticFileServer.class.getName();
+	     String classNamePath = className.replace(".", "/") + ".properties";
+		 PropsUtil propsUtil = new PropsUtil(classNamePath);
 		 String portStr = propsUtil.getValueByKey("port");
 		 String baseDirStr = propsUtil.getValueByKey("baseDir");
 		 if(portStr!=null){
@@ -82,5 +76,5 @@ public class StaticFileServer {
 		 }
 		 System.out.println("port:"+PORT);
 		 System.out.println("baseDir:"+baseDir);
-	 }
+	 }*/
 }

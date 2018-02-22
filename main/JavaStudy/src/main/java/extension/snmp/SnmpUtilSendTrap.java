@@ -1,7 +1,5 @@
 package extension.snmp;
 
-//模拟代理：
-
 import java.io.IOException;
 
 import java.util.Vector;
@@ -33,143 +31,131 @@ import org.snmp4j.smi.VariableBinding;
 import org.snmp4j.transport.DefaultUdpTransportMapping;
 
 /**
-
-* 本类用于向管理进程发送Trap信息
-
-*
-
-* @author zhanjia
-
-*
-
-*/
+ * 
+ * 
+ * @author zhanjia
+ * 
+ * 
+ */
 
 public class SnmpUtilSendTrap {
 
-private Snmp snmp = null;
+	private Snmp snmp = null;
 
-private Address targetAddress = null;
+	private Address targetAddress = null;
 
-public void initComm() throws IOException {
+	public void initComm() throws IOException {
 
-// 设置管理进程的IP和端口
+		// 锟斤拷锟矫癸拷锟斤拷锟教碉拷IP锟酵端匡拷
 
-targetAddress = GenericAddress.parse("udp:192.168.32.187/162");
+		targetAddress = GenericAddress.parse("udp:192.168.32.187/162");
 
-TransportMapping transport = new DefaultUdpTransportMapping();
+		TransportMapping transport = new DefaultUdpTransportMapping();
 
-snmp = new Snmp(transport);
+		snmp = new Snmp(transport);
 
-transport.listen();
+		transport.listen();
 
-}
+	}
 
-/**
+	/**
+	 * 
+	 * 
+	 * 
+	 * 
+	 * @throws IOException
+	 */
 
-* 向管理进程发送Trap报文
+	public void sendPDU() throws IOException {
 
-*
 
-* @throws IOException
+		CommunityTarget target = new CommunityTarget();
 
-*/
+		target.setAddress(targetAddress);
 
-public void sendPDU() throws IOException {
 
-// 设置 target
+		target.setRetries(2);
 
-CommunityTarget target = new CommunityTarget();
 
-target.setAddress(targetAddress);
+		target.setTimeout(1500);
 
-// 通信不成功时的重试次数
 
-target.setRetries(2);
+		target.setVersion(SnmpConstants.version2c);
 
-// 超时时间
 
-target.setTimeout(1500);
+		PDU pdu = new PDU();
 
-// snmp版本
+		pdu.setRequestID((new Integer32(1234)));
 
-target.setVersion(SnmpConstants.version2c);
+		pdu.setType(1);
 
-// 创建 PDU
+		pdu.setErrorIndex(2);
 
-PDU pdu = new PDU();
+		pdu.add(new VariableBinding(new OID(".1.3.6.1.2.3377.10.1.1.1.1"),
 
-pdu.setRequestID((new Integer32(1234)));
+		new OctetString("SnmpTrap")));
 
-pdu.setType(1);
+		pdu.add(new VariableBinding(new OID(".1.3.6.1.2.3377.10.1.1.1.2"),
 
-pdu.setErrorIndex(2);
+		new OctetString("JavaEE")));
 
-pdu.add(new VariableBinding(new OID(".1.3.6.1.2.3377.10.1.1.1.1"),
+		pdu.add(new VariableBinding(new OID(".1.3.6.1.2.3377.10.1.1.1.3"),
 
-new OctetString("SnmpTrap")));
+		new OctetString("aaa")));
 
-pdu.add(new VariableBinding(new OID(".1.3.6.1.2.3377.10.1.1.1.2"),
+		pdu.add(new VariableBinding(new OID(".1.3.6.1.2.3377.10.1.1.1.4"),
 
-new OctetString("JavaEE")));
+		new OctetString("ccc")));
 
-pdu.add(new VariableBinding(new OID(".1.3.6.1.2.3377.10.1.1.1.3"),
+		pdu.add(new VariableBinding(new OID("1"),
 
-new OctetString("aaa")));
+		new OctetString("wcnmlgb")));
 
-pdu.add(new VariableBinding(new OID(".1.3.6.1.2.3377.10.1.1.1.4"),
+		pdu.setType(PDU.TRAP);
 
-new OctetString("ccc")));
 
-pdu.add(new VariableBinding(new OID("1"),
+		ResponseEvent respEvnt = snmp.send(pdu, target);
 
-new OctetString("wcnmlgb")));
+		if (respEvnt != null && respEvnt.getResponse() != null) {
 
-pdu.setType(PDU.TRAP);
+			Vector<VariableBinding> recVBs = (Vector<VariableBinding>) respEvnt
+					.getResponse().getVariableBindings();
 
-// 向Agent发送PDU，并接收Response
+			for (int i = 0; i < recVBs.size(); i++) {
 
-ResponseEvent respEvnt = snmp.send(pdu, target);
+				VariableBinding recVB = recVBs.elementAt(i);
 
-// 解析Response
+				System.out
+						.println(recVB.getOid() + " : " + recVB.getVariable());
 
-if (respEvnt != null && respEvnt.getResponse() != null) {
+			}
 
-Vector<VariableBinding> recVBs = (Vector<VariableBinding>) respEvnt.getResponse().getVariableBindings();
+		}
 
-for (int i = 0; i < recVBs.size(); i++) {
+		else {
 
-VariableBinding recVB = recVBs.elementAt(i);
+			System.out.println("8111111111111111");
 
-System.out.println(recVB.getOid() + " : " + recVB.getVariable());
+		}
 
-}
+	}
 
-}
+	public static void main(String[] args) {
 
-else{
+		try {
 
-System.out.println("8111111111111111");
+			SnmpUtilSendTrap util = new SnmpUtilSendTrap();
 
-}
+			util.initComm();
 
-}
+			util.sendPDU();
 
-public static void main(String[] args) {
+		} catch (Exception e) {
 
-try {
+			e.printStackTrace();
 
-SnmpUtilSendTrap util = new SnmpUtilSendTrap();
+		}
 
-util.initComm();
-
-util.sendPDU();
-
-} catch (Exception e) {
-
-e.printStackTrace();
-
-}
-
-}
+	}
 
 }

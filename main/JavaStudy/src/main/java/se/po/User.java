@@ -12,71 +12,67 @@ public class User implements Serializable{
 	 */
 	private static final long serialVersionUID = 2841075985730048324L;
 	/**
-	 * 用户ID
 	 */
 	private String id;
 	/**
-	 * 登录名
 	 */
 	private String loginName;
 	/**
-	 * 用户名
 	 */
 	private String userName;
 	/**
-	 * 拼音
 	 */
 	private String pinyin;
 	/**
-	 * 部门
+ 
 	 */
 	private Department department;
 	/**
-	 * 部门名称-供界面ext使用
+ 
 	 */
 	private String departmentName;
 	/**
-	 * 部门id-有此属性，mybatis会简单点，不用关联查询
+ 
 	 */
 	private String departmentId;
 	/**
-	 * 手机号码
+ 
 	 */
 	private String mobileNumber;
 	/**
-	 * 电话号码
+ 
 	 */
 	private String teleNumber;
 	/**
-	 * 邮箱
+ 
 	 */
 	private String email;
 	/**
-	 * 密码
+ 
 	 */
 	private String password;
 	/**
-	 * 上传头像路径
+ 
 	 */
 	private String photoPath;
 	/**
-	 * 描述
+ 
 	 */
 	private String described;
 	/**
-	 * 用户角色ID
+ 
 	 */
 	private List<String> roleIds;
 	/**
-	 * 用户角色名称
+ 
 	 */
 	private List<String> roleNames;
 	/**
-	 * 是否已删除，0：未删除 1：已删除
+ 
 	 */
 	private int isDeleted;
 	/**
-	 * 完整性
+ 
 	 */
 	private String integrality = "";
 

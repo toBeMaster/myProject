@@ -22,6 +22,7 @@ class MyHttpRequestHandler implements Runnable {
 
 	private Socket accept;
 	private String baseDir;
+	private String localhostAddress;
 
 	public MyHttpRequestHandler(Socket accept,String baseDir) {
 		this.accept = accept;
@@ -34,7 +35,6 @@ class MyHttpRequestHandler implements Runnable {
 		System.out.println("接受到请求，开始处理");
 		BufferedReader bReader2 = null;
 		try {
-
 			// 读取数据
 			System.out.println("接受到请求,IP：" + accept.getRemoteSocketAddress());
 			InputStream is = accept.getInputStream();
@@ -49,9 +49,11 @@ class MyHttpRequestHandler implements Runnable {
 			while (!(((bufferStr = bReader.readLine()).equals("")) && count > 0)) {
 				count++;
 				sb.append(bufferStr);
-				// printBs(bufferStr.getBytes());
-				// System.out.println("读到的数据：" + bufferStr);
 				sb.append("\n");
+				int index = bufferStr.indexOf("Host: ");
+				if(index>=0){
+					localhostAddress = bufferStr.substring(6);
+				}
 			}
 			bufferStr = sb.toString();
 			System.out.println("最终读取数据：\n" + bufferStr);
@@ -76,7 +78,7 @@ class MyHttpRequestHandler implements Runnable {
 						tempPath += "/";
 					}
 					if(tempPath.length()>1){
-						fileStr +=  "<a href='http://localhost:"+StaticFileServer.PORT+"/' target='_self'>.</a><br/>";
+						fileStr +=  "<a href='http://"+localhostAddress+"/' target='_self'>.</a><br/>";
 						String parentDirectory = tempPath.substring(0,tempPath.lastIndexOf("/"));
 						parentDirectory = parentDirectory.substring(0,parentDirectory.lastIndexOf("/"));
 						if (!parentDirectory.endsWith("/")) {
@@ -89,8 +91,12 @@ class MyHttpRequestHandler implements Runnable {
 					String[] list = file.list();
 					for (String item : list) {
 						if(item.indexOf("$")==0)continue;
+						String targetType = "_self";
+						if(item.lastIndexOf(".")>0){
+							targetType = "_blank";
+						}
 						fileStr += "<a href='" + tempPath + item
-								+ "'target='_self'>" + item + "</a><br/>";
+								+ "'target='"+targetType+"'>" + item + "</a><br/>";
 					}
 					fileStr+= "</body></html>";
 					
@@ -106,15 +112,19 @@ class MyHttpRequestHandler implements Runnable {
 						// 根据我们Constant中指定目录与浏览器解析的地址去初始化一个文件。
 						File file1 = new File(baseDir, destFile );
 						fis = new FileInputStream(file1);
-						int ch = fis.read(bytes, 0, BUFFER_SIZE);
+						int ch = fis.read(bytes, 0, bytes.length);
 						while (ch != -1) {
-							oStream.write(bytes, 0, ch);
-							ch = fis.read(bytes, 0, BUFFER_SIZE);
+							oStream.write(bytes, 0, bytes.length);
+							ch = fis.read(bytes, 0, bytes.length);
+							oStream.flush();
 						}
+						oStream.close();
 					} catch (FileNotFoundException e) {
-						String errorMessage = "HTTP/1.1 404 File Not Found\r\n"
-								+ "Content-Type: text/html\r\n" + "Content-Length: 23\r\n"
-								+ "\r\n" + "<h1 color='red'>File Not Found</h1>";
+						String errorMessage ="<html><head><title>404</title></head><body><center style='padding-top:10%;'>";
+						errorMessage += "HTTP/1.1 404 File Not Found<br/>"
+								+ "Content-Type: text/html<br/>" + "Content-Length: 23<br/>"
+						        + "<h1 style='color:red;'>File Not Found</h1>";
+					 	errorMessage +=  "</center></body></html>";
 						oStream.write(errorMessage.getBytes());
 					} finally {
 						if (fis != null)
@@ -122,7 +132,8 @@ class MyHttpRequestHandler implements Runnable {
 					}
 				}
 			} catch (FileNotFoundException e) {
-				fileStr += "file not found!";
+				fileStr = "file not found!";
+				oStream.write(fileStr.getBytes());
 			}
 			
 		} catch (IOException e) {
