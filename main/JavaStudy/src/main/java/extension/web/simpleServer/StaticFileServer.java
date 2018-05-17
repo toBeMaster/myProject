@@ -24,7 +24,7 @@ public class StaticFileServer {
 		System.out.println("静态文件服务器启动");
 		ServerSocket serverSocket = null;
 		try {
-			serverSocket = new ServerSocket(80);
+			serverSocket = new ServerSocket(8080);
 			// serverSocket.setSoTimeout(15000);
 			while (true) {
 				Socket accept = serverSocket.accept();

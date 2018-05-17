@@ -32,7 +32,7 @@ class MyHttpRequestHandler implements Runnable {
 	@Override
 	public void run() {
 
-		System.out.println("接受到请求，开始处理");
+		System.out.println("\n\n--------------------接受到请求，开始处理---------");
 		BufferedReader bReader2 = null;
 		try {
 			// 读取数据
@@ -103,12 +103,22 @@ class MyHttpRequestHandler implements Runnable {
 					// 返回
 					System.out.println("返回内容为:\n" + fileStr);
 					oStream.write(fileStr.getBytes());
+					System.out.println("hello");
 					oStream.flush();
+					System.out.println("hello 11");
+					oStream.close();
+					is.close();
+					isReader.close();
+					bReader.close();
+					System.out.println("hello 22");
 				} else {
 					int BUFFER_SIZE =1024;
 					byte[] bytes = new byte[BUFFER_SIZE];
 					FileInputStream fis = null;
 					try {
+						fileStr = "HTTP/1.1 200 OK<br/>"
+								+"Content-Type:image/gif<br/>"+"Content-Length: "+1024*1024*256+"<br/>";
+					//	oStream.write(fileStr.getBytes(),0,fileStr.getBytes().length);
 						// 根据我们Constant中指定目录与浏览器解析的地址去初始化一个文件。
 						File file1 = new File(baseDir, destFile );
 						fis = new FileInputStream(file1);
@@ -122,7 +132,7 @@ class MyHttpRequestHandler implements Runnable {
 					} catch (FileNotFoundException e) {
 						String errorMessage ="<html><head><title>404</title></head><body><center style='padding-top:10%;'>";
 						errorMessage += "HTTP/1.1 404 File Not Found<br/>"
-								+ "Content-Type: text/html<br/>" + "Content-Length: 23<br/>"
+								+ "Content-Type: text/html<br/>" + "Content-Length: 230<br/>"
 						        + "<h1 style='color:red;'>File Not Found</h1>";
 					 	errorMessage +=  "</center></body></html>";
 						oStream.write(errorMessage.getBytes());

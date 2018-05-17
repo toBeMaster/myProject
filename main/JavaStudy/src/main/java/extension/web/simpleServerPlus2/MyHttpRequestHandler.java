@@ -32,9 +32,11 @@ class MyHttpRequestHandler implements Runnable {
 	@Override
 	public void run() {
 
-		System.out.println("接受到请求，开始处理");
+		System.out.println("\n\n----------------  接受到请求，开始处理  -------------");
 		BufferedReader bReader2 = null;
 		try {
+			
+			
 			// 读取数据
 			System.out.println("接受到请求,IP：" + accept.getRemoteSocketAddress());
 			InputStream is = accept.getInputStream();
@@ -112,7 +114,9 @@ class MyHttpRequestHandler implements Runnable {
 						// 根据我们Constant中指定目录与浏览器解析的地址去初始化一个文件。
 						File file1 = new File(baseDir, destFile );
 						fis = new FileInputStream(file1);
-						fileStr = "";
+						fileStr = "HTTP/1.1 200 OK<br/>"
+								+"Content-Type:application/octet-stream<br/>"+"Content-Length: 230<br/>";
+						oStream.write(fileStr.getBytes());
 						int ch = fis.read(bytes, 0, bytes.length);
 						while (ch >0) {
 							oStream.write(bytes, 0, bytes.length);
@@ -123,7 +127,7 @@ class MyHttpRequestHandler implements Runnable {
 					} catch (FileNotFoundException e) {
 						String errorMessage ="<html><head><title>404</title></head><body><center style='padding-top:10%;'>";
 						errorMessage += "HTTP/1.1 404 File Not Found<br/>"
-								+ "Content-Type: text/html<br/>" + "Content-Length: 23<br/>"
+								+ "Content-Type: text/html<br/>" + "Content-Length: 230<br/>"
 						        + "<h1 style='color:red;'>File Not Found</h1>";
 					 	errorMessage +=  "</center></body></html>";
 						oStream.write(errorMessage.getBytes());

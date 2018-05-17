@@ -10,10 +10,6 @@ import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.net.Socket;
 
-import extension.web.httpServer.Request;
-import extension.web.httpServer.Response;
-import extension.web.httpServer.StaticResourceProcessor;
-
 /**
  * 访问本地文件/目录
  * 
@@ -99,6 +95,9 @@ class MyHttpRequestHandler implements Runnable {
 			System.out.println("返回内容为:\n" + fileStr);
 			oStream.write(fileStr.getBytes());
 			oStream.flush();
+			is.close();
+			isReader.close();
+			bReader.close();
 		} catch (IOException e) {
 			e.printStackTrace();
 		} finally {

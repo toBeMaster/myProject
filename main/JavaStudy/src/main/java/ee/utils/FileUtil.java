@@ -1,12 +1,21 @@
 package ee.utils;
 
+import java.io.BufferedReader;
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.OutputStream;
 import java.io.PrintWriter;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -295,5 +304,112 @@ public class FileUtil {
 		}
 		DataWrapper.putJson(result);
 	}
+   
+   
+   
+   
+
+   /** 
+    * 上传图片form 
+    * @param urlStr 地址 
+    * @param textMap form字段类型 
+    * @param fileMap 文件上传map 
+    * @return 
+    * @author wall 
+    * @date 2015-8-6 
+    */  
+   public static String uploadFormFile(String urlStr, Map<String, String> textMap, Map<String, String> fileMap) {  
+         
+         
+       String result = "";  
+       HttpURLConnection conn = null;  
+       //分隔符  
+       String finalSplit = "---------------------------123821742118716";    
+       try {  
+           URL url = new URL(urlStr);  
+           conn = (HttpURLConnection) url.openConnection();  
+           conn.setConnectTimeout(5000);  
+           conn.setReadTimeout(30000);  
+           conn.setDoOutput(true);  
+           conn.setDoInput(true);  
+           conn.setUseCaches(false);  
+           conn.setRequestMethod("POST");  
+           conn.setRequestProperty("Connection", "Keep-Alive");  
+           conn.setRequestProperty("User-Agent", "Mozilla/5.0 (Windows; U; Windows NT 6.1; zh-CN; rv:1.9.2.6)");  
+           conn.setRequestProperty("Content-Type", "multipart/form-data; boundary=" + finalSplit);  
+           OutputStream out = new DataOutputStream(conn.getOutputStream());  
+           //文本域   
+           if (textMap != null) {  
+               StringBuffer strBuf = new StringBuffer();  
+               Iterator<Map.Entry<String, String>> iter = textMap.entrySet().iterator();  
+               while (iter.hasNext()) {  
+                   Map.Entry<String, String> entry = iter.next();  
+                   String inputName = (String) entry.getKey();  
+                   String inputValue = (String) entry.getValue();  
+                   if (inputValue == null) {  
+                       continue;  
+                   }  
+                   inputValue = new String(inputValue.getBytes("GBK"));  
+                   strBuf.append("\r\n").append("--").append(finalSplit).append("\r\n");  
+                   strBuf.append("Content-Disposition: form-data; name=\"" + inputName + "\"\r\n\r\n");  
+                   strBuf.append(inputValue);  
+               }  
+               out.write(strBuf.toString().getBytes("UTF-8"));  
+           }  
+ 
+           // 上传文件    
+           if (fileMap != null) {  
+               Iterator<Map.Entry<String, String>> iter = fileMap.entrySet().iterator();  
+               while (iter.hasNext()) {  
+                   Map.Entry<String, String> entry = iter.next();  
+                   String inputName = (String) entry.getKey();  
+                   String inputValue = (String) entry.getValue();  
+                   if (inputValue == null) {  
+                       continue;  
+                   }  
+                   File file = new File(inputValue);  
+                   String filename = file.getName();  
+         //          MagicMatch match = Magic.getMagicMatch(file, false, true);  
+         //        String contentType = match.getMimeType();  
+                   String contentType = "multipart/form-data"; 
+                   StringBuffer strBuf = new StringBuffer();  
+                   strBuf.append("\r\n").append("--").append(finalSplit).append("\r\n");  
+                   strBuf.append("Content-Disposition: form-data; name=\"" + inputName + "\"; filename=\"" + filename + "\"\r\n");  
+              //     strBuf.append("Content-Type:" + contentType + "\r\n\r\n");  
+                   out.write(strBuf.toString().getBytes());  
+                   DataInputStream in = new DataInputStream(new FileInputStream(file));  
+                   int bytes = 0;  
+                   byte[] bufferOut = new byte[1024];  
+                   while ((bytes = in.read(bufferOut)) != -1) {  
+                       out.write(bufferOut, 0, bytes);  
+                   }  
+                   in.close();  
+               }  
+           }  
+           byte[] endData = ( "\r\n--" + finalSplit + "--\r\n").getBytes();  
+           out.write(endData);  
+           out.flush();  
+           out.close();  
+           // 读取返回数据    
+           StringBuffer strBuf = new StringBuffer();  
+           BufferedReader reader = new BufferedReader(new InputStreamReader(conn.getInputStream()));  
+           String line = null;  
+           while ((line = reader.readLine()) != null) {  
+               strBuf.append(line).append("\n");  
+           }  
+           result = strBuf.toString();  
+           reader.close();  
+           reader = null;  
+       } catch (Exception e) {  
+           System.out.println("上传文件请求失败！" + urlStr);  
+           e.printStackTrace();  
+       } finally {  
+           if (conn != null) {  
+               conn.disconnect();  
+               conn = null;  
+           }  
+       }  
+       return result;  
+   }
 }
 
